@@ -12,21 +12,58 @@ items = [
     'Children',
 ]
 
-# TODO: object oriented solution.  need to implement plural flag
+class Item():
+    def __init__(self, name: str):
+        self.name = name
 
-def ask(item):
-    return f'{item}, {item}, what do you see?'
+    def subj_phrase(self):
+        return 'I see'
 
-def answer(next_item):
-    return f'I see a {next_item}, looking at me.'
+    def obj_phrase(self):
+        return 'me'
+
+    def question(self):
+        return f'{self.name}, {self.name}, what do you see?'
+
+    def answer(self, view):
+        if len(view) > 1:
+            viewstr = ' a ' + ', a '.join(v.name for v in view[:-1])
+            viewstr += f' and a {view[-1].name}'
+        else:
+            if isinstance(view[0], PluralItem):
+                viewstr = f' {view[0].name}'
+            else:
+                viewstr = f' a {view[0].name}'
+        return f'{self.subj_phrase()}{viewstr} looking at {self.obj_phrase()}.'
+
+class PluralItem(Item):
+    def subj_phrase(self):
+        return 'We see'
+
+    def obj_phrase(self):
+        return 'us.  That\'s what we see'
 
 def main():
+    items = [
+        Item('Brown Bear'),
+        Item('Red Bird'),
+        Item('Yellow Duck'),
+        Item('Blue Horse'),
+        Item('Green Frog'),
+        Item('Purple Cat'),
+        Item('White Dog'),
+        Item('Black Sheep'),
+        Item('Goldfish'),
+        Item('Teacher'),
+        PluralItem('Children'),
+    ]
+
     for (i, item) in enumerate(items):
-        if i > 0:
-            print(answer(item))
+        print(item.question())
+        if i < len(items)-1:
+            print(item.answer([items[i+1]]))
+        else:
+            print(item.answer(items[:-1]))
 
-        print(ask(item))
-
-    print(f'We see a {", a ".join(items[:-2])} and a {items[-1]} looking at us.\nThat\'s what we see.')
-
-main()
+if __name__ == '__main__':
+    main()
