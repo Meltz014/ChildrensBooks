@@ -9,7 +9,7 @@ by Sandra Boynton
 
 ## Program output
 ```
-py -3 -m BlueHatGreenHat
+C:\>py -3 -m BlueHatGreenHat
 Blue Hat
 Green Hat
 Red Hat
