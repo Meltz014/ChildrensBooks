@@ -64,6 +64,3 @@ def main():
             print(item.answer([items[i+1]]))
         else:
             print(item.answer(items[:-1]))
-
-if __name__ == '__main__':
-    main()
