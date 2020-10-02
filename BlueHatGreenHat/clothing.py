@@ -1,4 +1,5 @@
 class Clothing():
+    """A simulation of a clothing article with the single attribute, color."""
     def __init__(self, color):
         self.color = color
 

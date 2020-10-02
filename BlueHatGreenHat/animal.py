@@ -1,9 +1,16 @@
 from . import clothing
 
 class OopsError(Exception):
+    """Error to be raised if clothing article is not valid."""
     pass
 
 class BodyPart():
+    """A simulation of a body part for valid, invalid, and current clothing.
+
+    Attributes:
+        valid_clothing (list) = Legal clothing article(s) for a body part.
+        current_clothing (list) = If article is valid, it is appended here.
+    """
     def __init__(self):
         self.valid_clothing = []
         self.current_clothing = []
@@ -51,7 +58,7 @@ class Hands(BodyPart):
 
 
 class Animal():
-
+    """A simulation of an animal and its various body parts."""
     def __init__(self):
         self.head = Head()
         self.feet = Feet()
@@ -70,6 +77,7 @@ class Animal():
                       self.hands]
 
     def swim(self):
+        """Upon a swim, any current clothing raises OopsError('Oops!')."""
         for part in self.parts:
             if part.current_clothing:
                 raise(OopsError('Oops!'))
