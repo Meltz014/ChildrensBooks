@@ -1,3 +1,12 @@
+"""Code version: Blue Hat, Green Hat by Sandra Boynton
+
+To Do:
+    * context manager for OopsError
+    
+.. Book Video:
+    https://youtu.be/ZlBYUjYVr5w
+"""
+
 from .animal import Animal, OopsError
 from . import clothing
 
