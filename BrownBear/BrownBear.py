@@ -1,3 +1,7 @@
+"""Code version: Brown Bear, Brown Bear, What Do You See?
+by Bill Martin Jr. / Eric Carle
+"""
+
 items = [
     'Brown Bear',
     'Red Bird',
