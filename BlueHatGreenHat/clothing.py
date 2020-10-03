@@ -2,7 +2,7 @@ class Clothing():
     """A simulation of an article of clothing.
 
     Attributes:
-    color (str) = The clothing article's color.
+        color (str) = The clothing article's color.
     """
     def __init__(self, color):
         self.color = color
