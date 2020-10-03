@@ -58,7 +58,18 @@ class Hands(BodyPart):
 
 
 class Animal():
-    """A simulation of an animal and its various body parts."""
+    """A simulation of an animal and its various body parts.
+
+    Attributes:
+        head (ins) = An instance of class BodyPart for head.
+        feet (ins) = For feet.
+        torso (ins) = For torso.
+        back (ins) = For back.
+        front (ins) = For front.
+        legs (ins) = For legs.
+        hands (ins) = For hands.
+        parts (list) = A collection body parts above.
+    """
     def __init__(self):
         self.head = Head()
         self.feet = Feet()
