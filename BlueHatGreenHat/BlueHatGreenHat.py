@@ -1,10 +1,27 @@
+"""Code version: Blue Hat, Green Hat by Sandra Boynton
+
+To Do:
+    * context manager for OopsError
+    
+.. Book Video:
+    https://youtu.be/ZlBYUjYVr5w
+"""
+
 from .animal import Animal, OopsError
 from . import clothing
 
 # TODO: context manager for OopsError
 
-def main():
 
+def main():
+    """Instantiates animals and tries to see if articles of clothing are
+    worn on the correct body part.
+
+        e.g. Hat on head, valid. Hat on feet, invalid.
+
+    If valid, prints color and clothing article.
+    If invalid, prints raised OopsError('Oops!').
+    """
     try:
         elephant = Animal()
         elephant.head.place(clothing.Hat('Blue'))
